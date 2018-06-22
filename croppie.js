@@ -36,7 +36,7 @@
         }());
     }
 
-    if (!HTMLCanvasElement.prototype.toBlob) {
+    if (!window.HTMLCanvasElement.prototype.toBlob) {
         Object.defineProperty(HTMLCanvasElement.prototype, 'toBlob', {
             value: function (callback, type, quality) {
                 var binStr = atob( this.toDataURL(type, quality).split(',')[1] ),
